@@ -4,33 +4,33 @@ Local-first databases, CRDTs, sync engines
 
 ### Sync Platforms & Backends-as-a-Service (BaaS)
 
-- **[PartyKit](https://www.partykit.io/)** - An open-source platform for deploying real-time, multiplayer applications. It uses small, stateful servers ("parties") that run at the edge and integrates with existing hosting providers. [GitHub](https://github.com/partykit/partykit)
-- **[Convex](https://www.convex.dev/)** - An open-source reactive database with a full-stack TypeScript experience. It guarantees that the UI is always in sync with the database state in real time. [GitHub](https://github.com/get-convex/convex-backend)
-- **[InstantDB](https://www.instantdb.com/)** - A modern Firebase alternative providing a real-time database directly to the frontend, with automatic optimistic updates and robust offline support. [GitHub](https://github.com/instantdb/instant)
-- **[Liveblocks](https://liveblocks.io/)** - A suite of APIs and pre-built components for adding collaborative experiences like live presence, comments, and multiplayer cursors to products. [GitHub](https://github.com/liveblocks/liveblocks)
+- **[PartyKit](https://www.partykit.io/)** - Edge-deployed stateful servers with WebSocket connections for real-time multiplayer synchronization. Implements room-based state management with automatic persistence and scaling. [GitHub](https://github.com/partykit/partykit)
+- **[Convex](https://www.convex.dev/)** - Reactive database with automatic subscription management and real-time query invalidation. Uses TypeScript for schema definition and implements optimistic updates with conflict resolution. [GitHub](https://github.com/get-convex/convex-backend)
+- **[InstantDB](https://www.instantdb.com/)** - Client-side database with declarative queries and automatic optimistic updates. Implements offline-first architecture with conflict-free synchronization to backend. [GitHub](https://github.com/instantdb/instant)
+- **[Liveblocks](https://liveblocks.io/)** - WebSocket-based collaboration infrastructure with presence awareness, cursor tracking, and document synchronization protocols. [GitHub](https://github.com/liveblocks/liveblocks)
 
 ### Sync Infrastructure & Libraries
 
-- **[ElectricSQL](https://electric-sql.com/)** - An open-source Postgres sync engine that adds real-time and local-first capabilities to applications built on PostgreSQL by syncing data to client-side environments. [GitHub](https://github.com/electric-sql/electric)
-- **[PowerSync](https://www.powersync.com/)** - A sync engine that connects backend databases like Postgres, MySQL, or MongoDB with an in-app SQLite database on the client, enabling offline-first applications. [GitHub](https://github.com/powersync-ja/powersync-js)
-- **[Ditto](https://ditto.live/)** - A sync platform with a mobile database featuring peer-to-peer mesh networking, allowing data synchronization directly between devices without a central server.
-- **[Replicache](https://replicache.dev/)** - An influential client-side sync framework for building real-time, collaborative web applications with an "optimistic UI" model. It is now open-source and in maintenance mode. [GitHub](https://github.com/rocicorp/replicache)
-- **[Logux](https://logux.org/)** - A flexible JavaScript framework for building custom local-first sync engines by synchronizing a log of actions between the client and server. [GitHub](https://github.com/logux/logux)
+- **[ElectricSQL](https://electric-sql.com/)** - PostgreSQL logical replication with client-side SQLite synchronization. Implements bidirectional sync using write-ahead logs and conflict resolution through last-write-wins semantics. [GitHub](https://github.com/electric-sql/electric)
+- **[PowerSync](https://www.powersync.com/)** - Database synchronization layer that replicates server-side PostgreSQL/MySQL/MongoDB changes to client-side SQLite using incremental sync and conflict resolution. [GitHub](https://github.com/powersync-ja/powersync-js)
+- **[Ditto](https://ditto.live/)** - Peer-to-peer mesh database with CRDT-based synchronization. Implements multi-hop data propagation and works without internet connectivity using Bluetooth, WiFi, and LoRaWAN.
+- **[Replicache](https://replicache.dev/)** - Client-side sync framework implementing optimistic UI patterns with server reconciliation. Uses mutation functions and implements speculative execution with rollback capabilities. [GitHub](https://github.com/rocicorp/replicache)
+- **[Logux](https://logux.org/)** - Action-based synchronization protocol that maintains a distributed log of operations. Implements automatic conflict resolution and supports both client-server and peer-to-peer architectures. [GitHub](https://github.com/logux/logux)
 
 ### Local-First Databases
 
-- **[pglite](https://pglite.dev/)** - An embeddable PostgreSQL database that runs entirely in the browser or other JavaScript environments via WebAssembly. [GitHub](https://github.com/electric-sql/pglite)
-- **[Livestore](https://livestore.dev/)** - A next-generation state management framework that functions as a client-centric data layer, using a reactive embedded SQLite database and a Git-inspired sync engine. [GitHub](https://github.com/livestorejs/livestore)
-- **[RxDB](https://rxdb.info/)** - A fast, local-first NoSQL database for JavaScript applications, built on the principles of reactive programming where "everything is a stream." [GitHub](https://github.com/pubkey/rxdb)
-- **[PouchDB](https://pouchdb.com/)** - An established open-source JavaScript database for offline-first applications, designed to work with and synchronize to Apache CouchDB. [GitHub](https://github.com/pouchdb/pouchdb)
-- **[SignalDB](https://signaldb.js.org/)** - A modern, reactive, local-first JavaScript database that uses the "Signals" pattern for state management and reactivity. [GitHub](https://github.com/maxnowack/signaldb)
-- **[KuzuDB](https://kuzudb.com/)** - An embedded graph database built for query speed and scalability. Optimized for handling complex analytical workloads on property graphs with extremely fast query performance. [GitHub](https://github.com/kuzudb/kuzu)
+- **[pglite](https://pglite.dev/)** - PostgreSQL compiled to WebAssembly for in-browser execution. Implements full PostgreSQL compatibility including extensions and provides filesystem persistence via OPFS. [GitHub](https://github.com/electric-sql/pglite)
+- **[Livestore](https://livestore.dev/)** - Embedded SQLite database with reactive queries and Git-like versioning system. Implements automatic schema migrations and conflict-free synchronization using vector clocks. [GitHub](https://github.com/livestorejs/livestore)
+- **[RxDB](https://rxdb.info/)** - NoSQL database implementing reactive programming patterns with observable queries. Uses adapters for IndexedDB, LevelDB, and in-memory storage with CouchDB-style replication. [GitHub](https://github.com/pubkey/rxdb)
+- **[PouchDB](https://pouchdb.com/)** - JavaScript implementation of CouchDB's replication protocol. Stores documents locally using IndexedDB/WebSQL and synchronizes via HTTP-based replication with conflict resolution. [GitHub](https://github.com/pouchdb/pouchdb)
+- **[SignalDB](https://signaldb.js.org/)** - In-memory database implementing reactive queries using the Signals pattern. Provides automatic dependency tracking and re-computation of derived state. [GitHub](https://github.com/maxnowack/signaldb)
+- **[KuzuDB](https://kuzudb.com/)** - Embedded graph database implementing Cypher query language. Uses columnar storage for nodes and edges with vectorized query execution. [GitHub](https://github.com/kuzudb/kuzu)
 
 ### Core Data Structures & Algorithms
 
-- **[Yjs](https://yjs.dev/)** - A high-performance CRDT implementation for building collaborative software. It provides shared data types that automatically distribute and merge changes without conflicts. It's network-agnostic and has a rich ecosystem of extensions. [GitHub](https://github.com/yjs/yjs)
-- **[Automerge](https://automerge.org/)** - A library of JSON-like CRDT data structures for local-first collaborative applications. It uses an immutable state model, making it a good fit for functional programming paradigms. [GitHub](https://github.com/automerge/automerge)
-- **[Loro](https://loro.dev/)** - A high-performance CRDT library with a rich set of data types, including advanced structures for rich text and hierarchical data. It maintains a full version history, similar to Git. [GitHub](https://github.com/loro-dev/loro)
+- **[Yjs](https://yjs.dev/)** - CRDT implementation using operation-based shared types (Y.Array, Y.Map, Y.Text). Implements delta compression and supports various network layers including WebSocket, WebRTC, and HTTP. [GitHub](https://github.com/yjs/yjs)
+- **[Automerge](https://automerge.org/)** - JSON CRDT implementation using immutable data structures and vector clocks. Implements automatic merge resolution for concurrent edits with complete operation history tracking. [GitHub](https://github.com/automerge/automerge)
+- **[Loro](https://loro.dev/)** - CRDT library implementing tree-based data structures for rich text and hierarchical content. Uses Rust-based core with WebAssembly bindings and maintains full version history with branch merging. [GitHub](https://github.com/loro-dev/loro)
 
 ### Technical Deep Dives: How Sync Engines Work
 
@@ -46,5 +46,4 @@ Local-first databases, CRDTs, sync engines
 
 - **[Local-first software: You own your data, in spite of the cloud](https://www.inkandswitch.com/local-first/)** - The seminal 2019 essay from Ink & Switch that coined the term "local-first" and outlined its seven guiding ideals.
 - **[The Computer as Malleable Material](https://www.inkandswitch.com/malleable-software/)** - A follow-up essay from Ink & Switch advocating for software that users can reshape and adapt to their own needs.
-- **[How Linear's sync engine works](https://linear.app/blog/how-linear-s-sync-engine-works)** - A detailed, community-driven technical write-up of the high-performance sync engine behind the Linear application.
 - **[CRDTs: The Hard Parts](https://www.youtube.com/watch?v=x7drE24geUw&pp=ygUVQ1JEVHM6IFRoZSBIYXJkIFBhcnRz)** - An expert-level talk by Dr. Martin Kleppmann exploring the challenging edge cases and nuances of Conflict-free Replicated Data Types.
